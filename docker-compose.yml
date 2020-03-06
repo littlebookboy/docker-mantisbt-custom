@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mantisbt:
+    image: littlebookboy/mantisbt:latest
+    ports:
+      - "80:80"
+    links:
+      - mysql
+    volumes:
+      - ./config:/var/www/html/config
+      - ./plugins:/var/www/html/plugins
+      - ../codevtt:/var/www/html/codevtt
+      - ./lang/strings_chinese_traditional.txt:/var/www/html/lang/strings_chinese_traditional.txt
+      - ./initial.sh:/var/www/html/initial.sh
+    restart: always
+
+  mysql:
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bugtracker
+      - MYSQL_USER=mantisbt
+      - MYSQL_PASSWORD=mantisbt
+    volumes:
+      - ./mysql:/var/lib/mysql
+    restart: always
