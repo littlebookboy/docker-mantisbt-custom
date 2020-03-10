@@ -1,7 +1,7 @@
 <?php
 
-if (file_exists('./env.php')) {
-    include './env.php';
+if (file_exists('/var/www/html/env.php')) {
+    include '/var/www/html/env.php';
 }
 
 if (!function_exists('env')) {
