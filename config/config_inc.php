@@ -1,6 +1,6 @@
 <?php
 
-include "autoload.php";
+include "../autoload.php";
 
 // 配置可參考套件 codevTT 提供的 config_inc.php 範例, https://github.com/lbayle/codev/tree/master/doc/mantis_config
 
