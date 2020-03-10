@@ -13,6 +13,8 @@ services:
       - ../codevtt:/var/www/html/codevtt
       - ./lang/strings_chinese_traditional.txt:/var/www/html/lang/strings_chinese_traditional.txt
       - ./initial.sh:/var/www/html/initial.sh
+      - ./env.php:/var/www/html/env.php
+      - ./autoload.php:/var/www/html/autoload.php
     restart: always
 
   mysql:
